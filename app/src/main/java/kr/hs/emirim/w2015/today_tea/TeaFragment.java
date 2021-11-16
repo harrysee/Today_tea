@@ -1,5 +1,6 @@
 package kr.hs.emirim.w2015.today_tea;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,12 @@ public class TeaFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(),teas.get(position).teaName+"을 클릭했습니다",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("name",teas.get(position).teaName);
+                intent.putExtra("explan",teas.get(position).teaExplan);
+                intent.putExtra("imgSrc",teas.get(position).teaImg);
+                // 설명, 링크 추가
+                startActivity(intent);
 
             }
         });
