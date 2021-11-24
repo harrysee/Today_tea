@@ -19,7 +19,8 @@ public class DetailsActivity extends AppCompatActivity {
         // 데이터 가져오기
         Intent intent = getIntent();
         String teaname = intent.getStringExtra("name");
-        String teaeffica = intent.getStringExtra("explan");
+        String teaex = intent.getStringExtra("explan");
+        String teaeffica = intent.getStringExtra("efficacy");
         int teaimg = intent.getIntExtra("imgSrc",R.drawable.logo);
         TextView teaname_view = findViewById(R.id.detail_tea_name);
         TextView teaefficacy_view = findViewById(R.id.detail_tea_efficacy);
@@ -37,7 +38,7 @@ public class DetailsActivity extends AppCompatActivity {
         // 데이터 설정
         teaname_view.setText(teaname);
         teaefficacy_view.setText(teaeffica);
-//        teaexplan_view.setText(teaex);
+        teaexplan_view.setText(teaex);
         teaimgview.setImageResource(teaimg);
 
     }

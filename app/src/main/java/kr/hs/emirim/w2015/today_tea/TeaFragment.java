@@ -1,6 +1,10 @@
 package kr.hs.emirim.w2015.today_tea;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,11 +25,13 @@ import java.util.Arrays;
 import java.util.Collections;
 
 public class TeaFragment extends Fragment {
+    SQLiteHelper myHelper;
+    SQLiteDatabase rsqlDB, wsqlDB;
+    Cursor cursor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -37,15 +43,16 @@ public class TeaFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+        myHelper = new SQLiteHelper(getContext());
+        rsqlDB = myHelper.getReadableDatabase();    // 디비 읽기
+        wsqlDB = myHelper.getWritableDatabase();    // 디비수정
+        cursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB;",null);
         super.onViewCreated(view, savedInstanceState);
+
         ArrayList<TeaDataClass> teas = new ArrayList<>();
-        teas.add(new TeaDataClass("홍차","#혈액순환#좋음",R.drawable.logo));
-        teas.add(new TeaDataClass("녹차","#소화기관#유연",R.drawable.logo));
-        teas.add(new TeaDataClass("밀크티","#심신안정#좋음",R.drawable.logo));
-        teas.add(new TeaDataClass("녹차","#소화기관#유연",R.drawable.logo));
-        teas.add(new TeaDataClass("밀크티","#심신안정#좋음",R.drawable.logo));
-        teas.add(new TeaDataClass("녹차","#소화기관#유연",R.drawable.logo));
-        teas.add(new TeaDataClass("밀크티","#심신안정#좋음",R.drawable.logo));
+        while(cursor.moveToNext()){
+            teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4)));
+        }
 
         GridView gridView = view.findViewById(R.id.tea_grid);
         GridAdapter gridAdapter = new GridAdapter(teas,getActivity());
@@ -57,12 +64,13 @@ public class TeaFragment extends Fragment {
                 Toast.makeText(getContext(),teas.get(position).teaName+"을 클릭했습니다",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("name",teas.get(position).teaName);
+                intent.putExtra("efficacy",teas.get(position).teaEfficacy);
                 intent.putExtra("explan",teas.get(position).teaExplan);
                 intent.putExtra("imgSrc",teas.get(position).teaImg);
                 // 설명, 링크 추가
                 startActivity(intent);
-
             }
         });
+
     }
 }

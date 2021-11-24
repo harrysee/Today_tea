@@ -16,11 +16,15 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static void datasave(){
+        TeaInputData td = new TeaInputData();
+        td.insertData();
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        datasave();
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = (ViewPager2) findViewById(R.id.container);
 
