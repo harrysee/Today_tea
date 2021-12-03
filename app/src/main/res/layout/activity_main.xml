@@ -7,11 +7,10 @@
     android:background="#E3D2A8"
     tools:context=".MainActivity">
 
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="409dp"
-        android:layout_height="63dp"
+        android:layout_height="50dp"
         android:background="#998D40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

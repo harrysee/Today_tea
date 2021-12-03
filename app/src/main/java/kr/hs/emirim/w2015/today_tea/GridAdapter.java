@@ -48,8 +48,8 @@ public class GridAdapter extends BaseAdapter {
         TextView tea_explan_view = convertView.findViewById(R.id.item_teaExplan);
 
         tea_name_view.setText(this.teas.get(position).teaName);
-        tea_explan_view.setText(this.teas.get(position).teaExplan);
-        tea_img_view.setImageResource(this.teas.get(position).teaImg);
+        tea_explan_view.setText(this.teas.get(position).teaEfficacy);
+//        tea_img_view.setImageResource(this.teas.get(position).teaImg);
         return convertView;
     }
 }

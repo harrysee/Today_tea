@@ -66,7 +66,7 @@ public class TeaFragment extends Fragment {
                 intent.putExtra("name",teas.get(position).teaName);
                 intent.putExtra("efficacy",teas.get(position).teaEfficacy);
                 intent.putExtra("explan",teas.get(position).teaExplan);
-                intent.putExtra("imgSrc",teas.get(position).teaImg);
+//                intent.putExtra("imgSrc",teas.get(position).teaImg);
                 // 설명, 링크 추가
                 startActivity(intent);
             }

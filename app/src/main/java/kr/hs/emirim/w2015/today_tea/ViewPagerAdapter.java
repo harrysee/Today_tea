@@ -6,6 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +22,8 @@ public class ViewPagerAdapter extends FragmentStateAdapter{
         mfragList.add(new ThirdFragment());
     }
 
-    @NonNull
-    @org.jetbrains.annotations.NotNull
     @Override
-    public Fragment createFragment(int position) {
+    public @NotNull Fragment createFragment(int position) {
         return mfragList.get(position);
     }
 

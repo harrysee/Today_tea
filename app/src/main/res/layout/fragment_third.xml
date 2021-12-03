@@ -5,84 +5,77 @@
     android:layout_width="match_parent"
     android:background="@color/beige"
     android:layout_height="match_parent"
-
     tools:context=".ThirdFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/today_feel_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/ask_mind"
-        android:textColor="#998D40"
+        android:textColor="#534D23"
         android:textSize="33sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/feel1"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="50dp"
+        android:id="@+id/feel4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/shape_cardview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/today_feel_text">
+        app:layout_constraintTop_toBottomOf="@+id/feel3">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="57dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/spoon_good" />
+            android:src="@drawable/spoon_bad" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:text="행복함 80% 이상"
+            android:text="@string/mind_bad"
             android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/feel2"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/shape_cardview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feel1">
+        app:layout_constraintTop_toBottomOf="@+id/today_feel_text">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="57dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/spoon_good" />
+            android:src="@drawable/spoon_sad" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:text="행복함 80% 이상"
+            android:text="@string/mind_sad"
             android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:id="@+id/feel3"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/feel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/shape_cardview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/feel2">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="57dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:src="@drawable/spoon_good" />
 
@@ -91,56 +84,44 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:text="행복함 80% 이상"
+            android:paddingRight="10dp"
+            android:text="@string/mind_good"
             android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:id="@+id/feel4"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/feel3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/shape_cardview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feel3">
+        app:layout_constraintTop_toBottomOf="@+id/feel1">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="57dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/spoon_good" />
+            android:src="@drawable/spoon_soso" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            android:text="행복함 80% 이상"
+            android:text="@string/mind_soso"
             android:textSize="20sp" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/feel5"
-        android:layout_width="300dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_cardview"
+
+    <TextView
+        android:id="@+id/third_fooltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_text"
+        android:textColor="#6F8704"
+        android:textSize="20sp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feel4">
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/spoon_good" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:text="행복함 80% 이상"
-            android:textSize="20sp" />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
