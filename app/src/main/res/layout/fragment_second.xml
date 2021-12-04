@@ -1,26 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/beige"
-    tools:context=".SecondFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="차에 대해서"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="25sp"
+        android:textColor="#384532"/>
+    <ImageView
+        android:src="@drawable/tea_guide_0"
+        android:layout_width="match_parent"
+        android:layout_height="207dp"/>
 
-     <ImageView
-        android:id="@+id/tea_img"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <ImageView
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:text="다도방법"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/white"/>
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/beige"
+            tools:context=".SecondFragment">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="207dp"
+                android:src="@drawable/guide_1" />
+            <ImageView
+                android:src="@drawable/guide_2"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_3"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_4"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_5"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_6"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_7"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_8"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_9"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+            <ImageView
+                android:src="@drawable/guide_10"
+                android:layout_width="match_parent"
+                android:layout_height="207dp"/>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
