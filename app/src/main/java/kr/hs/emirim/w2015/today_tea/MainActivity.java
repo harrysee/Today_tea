@@ -10,6 +10,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences setcheck = getSharedPreferences("setting", MODE_PRIVATE);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,13 @@ public class MainActivity extends AppCompatActivity {
         textlist.add("GAIDE");
         textlist.add("TODAYTAE");
         new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText(textlist.get(position))).attach();
+
+        if(setcheck.getBoolean("firstcheck",true)){
+            SharedPreferences.Editor editor = setcheck.edit();
+            editor.putBoolean("firstcheck",false);
+            editor.apply();
+            datasave(this);
+        }
 
     }
     private static void datasave(Activity activity){

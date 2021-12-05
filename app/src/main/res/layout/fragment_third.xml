@@ -11,10 +11,10 @@
         android:id="@+id/today_feel_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="@string/ask_mind"
         android:textColor="#534D23"
-        android:textSize="33sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +23,9 @@
         android:id="@+id/feel4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/shape_cardview"
         app:layout_constraintTop_toBottomOf="@+id/feel3">
 
@@ -46,6 +49,9 @@
         android:id="@+id/feel2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/shape_cardview"
         app:layout_constraintTop_toBottomOf="@+id/today_feel_text">
 
@@ -69,6 +75,9 @@
         android:id="@+id/feel1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/shape_cardview"
         app:layout_constraintTop_toBottomOf="@+id/feel2">
 
@@ -92,6 +101,9 @@
     <LinearLayout
         android:id="@+id/feel3"
         android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_cardview"
         app:layout_constraintTop_toBottomOf="@+id/feel1">
@@ -119,7 +131,7 @@
         android:text="@string/last_text"
         android:textColor="#6F8704"
         android:textSize="20sp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

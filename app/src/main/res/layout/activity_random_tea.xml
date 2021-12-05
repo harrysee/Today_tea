@@ -7,7 +7,6 @@
     android:background="@color/beige"
     tools:context=".RandomTeaActivity">
 
-
     <ImageView
         android:id="@+id/random_back_img"
         android:layout_width="wrap_content"
@@ -20,41 +19,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="tea_animation.json"
+        app:lottie_loop="true" />
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/link_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29000002">
-
-        <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:lottie_fileName="tea_animation.json"
-            app:lottie_loop="true"
-            app:lottie_autoPlay="true"/>
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/detail_tea_name"
+            android:id="@+id/random_tea_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="차이름"
-            android:textColor="@color/green"
-            android:textSize="30sp" />
+            android:textColor="#4D5748"
+            android:textSize="35sp" />
 
         <TextView
-            android:id="@+id/detail_tea_explan"
+            android:id="@+id/random_tea_explan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:minHeight="100dp"
             android:padding="5dp"
+            android:textColor="#044550"
             android:text="TextView"
-            android:textSize="30sp" />
+            android:textSize="18sp" />
 
     </LinearLayout>
 
