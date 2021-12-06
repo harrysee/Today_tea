@@ -15,7 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.jetbrains.annotations.NotNull;
@@ -28,6 +30,12 @@ public class TeaFragment extends Fragment {
     SQLiteHelper myHelper;
     SQLiteDatabase rsqlDB, wsqlDB;
     Cursor cursor;
+    Cursor searchCursor;
+    EditText searchEdit;
+    ImageView searchBtn;
+    ArrayList<TeaDataClass> teas;
+    GridView gridView;
+    GridAdapter gridAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,17 +56,19 @@ public class TeaFragment extends Fragment {
         wsqlDB = myHelper.getWritableDatabase();    // 디비수정
         cursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB;",null);
         super.onViewCreated(view, savedInstanceState);
+        searchEdit = view.findViewById(R.id.search_edit);
+        searchBtn = view.findViewById(R.id.search_btn);
 
-        ArrayList<TeaDataClass> teas = new ArrayList<>();
+        teas = new ArrayList<>();
         while(cursor.moveToNext()){
             teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4)));
         }
 
-        GridView gridView = view.findViewById(R.id.tea_grid);
-        GridAdapter gridAdapter = new GridAdapter(teas,getActivity());
+        gridView = view.findViewById(R.id.tea_grid);
+        gridAdapter = new GridAdapter(teas,getActivity());
 
         gridView.setAdapter(gridAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {     // 각 아이템 클릭시
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(),teas.get(position).teaName+"을 클릭했습니다",Toast.LENGTH_SHORT).show();
@@ -72,7 +82,22 @@ public class TeaFragment extends Fragment {
             }
         });
 
+        searchBtn.setOnClickListener(searchBtnClickListener);
+
     }
+
+    View.OnClickListener searchBtnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String word = searchEdit.getText().toString();
+            searchCursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB WHERE teaname LIKE %"+ word +"%;",null);
+            teas = new ArrayList<>();
+            while(searchCursor.moveToNext()){
+                teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4)));
+            }
+            gridAdapter.notifyDataSetChanged();
+        }
+    };
 
 
 }
