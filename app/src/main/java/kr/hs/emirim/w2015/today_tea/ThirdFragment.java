@@ -101,7 +101,7 @@ public class ThirdFragment extends Fragment {
                 }
             }
             Intent intent = new Intent(getActivity(), RandomTeaActivity.class);
-            intent.putExtra("chooseTea", feelList.get((randomNum.nextInt(feelList.size())+1)).teaName); // 선택한 티 이름
+            intent.putExtra("chooseTea", feelList.get((randomNum.nextInt(feelList.size()-1)+1)).teaName); // 선택한 티 이름
             intent.putExtra("clickFeelNum",clickfeel);      // 클릭한 버튼 키
             startActivity(intent);
         }

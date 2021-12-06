@@ -14,4 +14,15 @@
     <color name="light_beige">#FFFFDA</color>
     <color name="olive">#998D40</color>
     <color name="light_pink">#998D40</color>
+
+    <color name="light_gray">#E7E7E7</color>
+    <color name="basic_green">#B3BFAF</color>
+    <color name="teal_green">#809291</color>
+    <color name="olive_green">#71732C</color>
+    <color name="weight_green">#697877</color>
+    <color name="pastel_blue">#7B93AF</color>
+    <color name="pastel_olive">#AF9B7B</color>
+    <color name="text_olive">#4D6200</color>
+    <color name="blue_white">#F2F5FF</color>
+
 </resources>

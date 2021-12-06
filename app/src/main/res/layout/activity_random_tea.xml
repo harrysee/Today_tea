@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beige"
+    android:background="@color/basic_green"
     tools:context=".RandomTeaActivity">
 
     <ImageView
@@ -46,17 +46,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="차이름"
-            android:textColor="#4D5748"
-            android:textSize="35sp" />
+            android:fontFamily="@font/classic"
+            android:layout_marginTop="30dp"
+            android:textColor="#021C5F"
+            android:textSize="40sp" />
 
         <TextView
             android:id="@+id/random_tea_explan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginTop="10dp"
             android:minHeight="100dp"
             android:padding="5dp"
-            android:textColor="#044550"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="#151504"
             android:text="TextView"
             android:textSize="18sp" />
 
@@ -66,11 +70,29 @@
         android:id="@+id/link_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/ligth_green"
-        android:text="상세보기"
         android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_round"
+        android:backgroundTint="@color/pastel_blue"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:text="상세보기"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/eat_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/shape_round"
+        android:backgroundTint="@color/light_pink"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:layout_marginRight="10dp"
+        android:text="먹어보기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/link_btn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,36 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/beige"
+    android:background="@color/basic_green"
     tools:context=".TeaFragment">
 
     <EditText
         android:id="@+id/search_edit"
         android:layout_width="289dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:hint="찾으시는 차를 검색해주세요"
+        android:paddingBottom="15dp"
+        android:textColorHint="#F1F1F1"
+        android:layout_marginLeft="30dp"
+        android:textColor="#fff"
         android:paddingLeft="15dp"
-        android:hint="효능을 검색해주세요"
-        android:background="@drawable/shape_round"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <GridView
         android:id="@+id/tea_grid"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:numColumns="2"
-        android:horizontalSpacing="-30dp"
-        android:verticalSpacing="23dp"
-        android:scrollbars="horizontal"
         android:gravity="center"
+        android:horizontalSpacing="-30dp"
+        android:numColumns="2"
+        android:scrollbars="horizontal"
+        tools:listitem="@layout/tea_item"
+        android:verticalSpacing="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_edit"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/search_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

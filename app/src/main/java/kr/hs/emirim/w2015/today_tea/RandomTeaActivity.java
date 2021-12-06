@@ -26,6 +26,16 @@ public class RandomTeaActivity extends AppCompatActivity {
 
         nametext.setText(teaName);
         //클릭한 마인드버튼에 따라서 설명글 다르게 하기
+        switch (clickmind){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
 
         back_img.setOnClickListener(new View.OnClickListener() {    //클릭하면 돌아가기
             @Override

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/beige"
+    android:background="@color/basic_green"
     android:layout_height="match_parent"
     tools:context=".ThirdFragment">
 
@@ -13,73 +13,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/ask_mind"
-        android:textColor="#534D23"
-        android:textSize="20sp"
+        android:textColor="#FFFDF6"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:id="@+id/feel4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/shape_cardview"
-        app:layout_constraintTop_toBottomOf="@+id/feel3">
-
-        <ImageView
-            android:layout_width="57dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/spoon_bad" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:text="@string/mind_bad"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/feel2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/shape_cardview"
-        app:layout_constraintTop_toBottomOf="@+id/today_feel_text">
-
-        <ImageView
-            android:layout_width="57dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/spoon_sad" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:text="@string/mind_sad"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/feel1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/shape_cardview"
-        app:layout_constraintTop_toBottomOf="@+id/feel2">
+        app:layout_constraintTop_toBottomOf="@+id/today_feel_text"
+        tools:layout_editor_absoluteX="20dp">
 
         <ImageView
             android:layout_width="57dp"
@@ -95,18 +44,48 @@
             android:layout_marginLeft="20dp"
             android:paddingRight="10dp"
             android:text="@string/mind_good"
+            android:textColor="@color/text_olive"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/feel2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/shape_cardview"
+        app:layout_constraintTop_toBottomOf="@+id/feel1"
+        tools:layout_editor_absoluteX="20dp">
+
+        <ImageView
+            android:layout_width="57dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/spoon_sad" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:text="@string/mind_sad"
+            android:textColor="@color/text_olive"
             android:textSize="20sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/feel3"
         android:layout_width="match_parent"
+        android:layout_height="70dp"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
         android:background="@drawable/shape_cardview"
-        app:layout_constraintTop_toBottomOf="@+id/feel1">
+        app:layout_constraintTop_toBottomOf="@+id/feel2"
+        tools:layout_editor_absoluteX="20dp">
 
         <ImageView
             android:layout_width="57dp"
@@ -121,6 +100,34 @@
             android:layout_gravity="center"
             android:layout_marginLeft="20dp"
             android:text="@string/mind_soso"
+            android:textColor="@color/text_olive"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/feel4"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/shape_cardview"
+        app:layout_constraintTop_toBottomOf="@+id/feel3">
+
+        <ImageView
+            android:layout_width="57dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/spoon_bad" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/text_olive"
+            android:text="@string/mind_bad"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -129,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/last_text"
-        android:textColor="#6F8704"
+        android:textColor="#3F51B5"
         android:textSize="20sp"
         android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

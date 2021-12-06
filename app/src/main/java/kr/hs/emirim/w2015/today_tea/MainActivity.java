@@ -10,9 +10,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 
 import com.google.android.material.tabs.TabLayout;
@@ -21,12 +23,12 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    SharedPreferences setcheck = getSharedPreferences("setting", MODE_PRIVATE);
+    SharedPreferences sharepreference;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharepreference = PreferenceManager.getDefaultSharedPreferences(this);
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager = (ViewPager2) findViewById(R.id.container);
 
@@ -40,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         textlist.add("TODAYTAE");
         new TabLayoutMediator(tabLayout, viewPager,(tab, position) -> tab.setText(textlist.get(position))).attach();
 
-        if(setcheck.getBoolean("firstcheck",true)){
-            SharedPreferences.Editor editor = setcheck.edit();
+        if(sharepreference.getBoolean("firstcheck",true)){
+            SharedPreferences.Editor editor = sharepreference.edit();
             editor.putBoolean("firstcheck",false);
             editor.apply();
             datasave(this);

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="@color/basic_green"
     android:layout_height="match_parent">
     <TextView
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/green"
+        android:background="@color/teal_green"
         android:text="다도방법"
         android:gravity="center"
         android:textColor="@color/white"/>
@@ -32,12 +33,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/beige"
+            android:background="@color/basic_green"
             tools:context=".SecondFragment">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="207dp"
+                android:layout_marginBottom="5dp"
                 android:src="@drawable/guide_1" />
             <ImageView
                 android:src="@drawable/guide_2"
