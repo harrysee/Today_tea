@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shareInterpolator="false">
+<!--    -> duration으로 애니메이션 지속되는 시간을 지정하고, from/to를 이용하여 어디로 이동할 지 지정합니다.-->
+    <translate
+        android:duration="500"
+        android:fromXDelta="0%"
+        android:toXDelta="0%"
+        android:fromYDelta="0%"
+        android:toYDelta="100%" />
+</set>

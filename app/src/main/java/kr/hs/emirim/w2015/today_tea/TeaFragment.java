@@ -1,16 +1,21 @@
 package kr.hs.emirim.w2015.today_tea;
 
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +66,7 @@ public class TeaFragment extends Fragment {
 
         teas = new ArrayList<>();
         while(cursor.moveToNext()){
-            teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4)));
+            teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4),cursor.getString(5)));
         }
 
         gridView = view.findViewById(R.id.tea_grid);
@@ -69,6 +74,7 @@ public class TeaFragment extends Fragment {
 
         gridView.setAdapter(gridAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {     // 각 아이템 클릭시
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getContext(),teas.get(position).teaName+"을 클릭했습니다",Toast.LENGTH_SHORT).show();
@@ -76,7 +82,14 @@ public class TeaFragment extends Fragment {
                 intent.putExtra("name",teas.get(position).teaName);
                 intent.putExtra("efficacy",teas.get(position).teaEfficacy);
                 intent.putExtra("explan",teas.get(position).teaExplan);
-//                intent.putExtra("imgSrc",teas.get(position).teaImg);
+                intent.putExtra("url",teas.get(position).teaUri);
+                intent.putExtra("imgSrc",teas.get(position).teaImg);
+                Log.i(String.valueOf(teas.get(position).teaImg), "onItemClick: ");
+                ActivityOptions.makeSceneTransitionAnimation(getActivity(),
+                        Pair.create(view.findViewById(R.id.teaImg),"imageTransition"),
+                        Pair.create(view.findViewById(R.id.teaName),"nameTransition"),
+                        Pair.create(view.findViewById(R.id.teaExplan),"efficTransition")
+                );
                 // 설명, 링크 추가
                 startActivity(intent);
             }
@@ -90,12 +103,12 @@ public class TeaFragment extends Fragment {
         @Override
         public void onClick(View v) {
             String word = searchEdit.getText().toString();
-            searchCursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB WHERE teaname LIKE %"+ word +"%;",null);
+            searchCursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB WHERE teaname LIKE '%"+ word +"%';",null);
             teas = new ArrayList<>();
             while(searchCursor.moveToNext()){
-                teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4)));
+                teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4),cursor.getString(5)));
             }
-            gridAdapter.notifyDataSetChanged();
+            gridAdapter.addItem(teas);
         }
     };
 

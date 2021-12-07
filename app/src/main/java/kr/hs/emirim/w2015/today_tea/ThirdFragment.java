@@ -29,7 +29,6 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -60,7 +59,7 @@ public class ThirdFragment extends Fragment {
 
         tealist = new ArrayList<>();
         while(cursor.moveToNext()){     // teaName, teaEfficacy, teaExplan, teaImg, mindkey
-            tealist.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4)));
+            tealist.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4),cursor.getString(5)));
         }
 
         cursor.close();
@@ -100,9 +99,14 @@ public class ThirdFragment extends Fragment {
                     feelList.add(tealist.get(i));
                 }
             }
+            int randomIndex = (randomNum.nextInt(feelList.size()));
             Intent intent = new Intent(getActivity(), RandomTeaActivity.class);
-            intent.putExtra("chooseTea", feelList.get((randomNum.nextInt(feelList.size()-1)+1)).teaName); // 선택한 티 이름
+            intent.putExtra("chooseTea", feelList.get(randomIndex).teaName); // 선택한 티 이름
             intent.putExtra("clickFeelNum",clickfeel);      // 클릭한 버튼 키
+            intent.putExtra("efficacy",feelList.get(randomIndex).teaEfficacy);
+            intent.putExtra("explan",feelList.get(randomIndex).teaExplan);
+            intent.putExtra("url",feelList.get(randomIndex).teaUri);
+            intent.putExtra("imgSrc",feelList.get(randomIndex).teaImg);
             startActivity(intent);
         }
     };

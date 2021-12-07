@@ -18,18 +18,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/item_teaImg"
+            android:id="@+id/teaImg"
             android:layout_width="95dp"
             android:layout_height="66dp"
             android:paddingLeft="10dp"
             android:paddingBottom="10dp"
             android:src="@drawable/logo"
+            android:transitionName="imageTransition"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/item_teaName"
+            android:id="@+id/teaName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -37,22 +38,24 @@
             android:fontFamily="@font/classic"
             android:textColor="#428290"
             android:textSize="18dp"
+            android:transitionName="nameTransition"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_teaImg" />
+            app:layout_constraintTop_toBottomOf="@+id/teaImg" />
 
         <TextView
-            android:id="@+id/item_teaExplan"
+            android:id="@+id/teaExplan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="5dp"
             android:text="#효능#효능적기"
+            android:transitionName="efficTransition"
             android:textColor="#63859D"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_teaName" />
+            app:layout_constraintTop_toBottomOf="@+id/teaName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

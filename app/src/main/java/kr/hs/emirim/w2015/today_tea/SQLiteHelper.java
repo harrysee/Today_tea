@@ -13,7 +13,7 @@ class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        db.execSQL("CREATE TABLE teainfoDB (teaname TEXT PRIMARY KEY, teaEfficacy TEXT, teaExplan VARCHAR(50), mindkey INTEGER, imgkey INTEGER);");
+        db.execSQL("CREATE TABLE teainfoDB (teaname TEXT PRIMARY KEY, teaEfficacy TEXT, teaExplan VARCHAR(100), mindkey INTEGER, imgkey INTEGER, teaUri VARCHAR(100));");
     }
 
     @Override
@@ -23,6 +23,6 @@ class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public void insertTEA(SQLiteDatabase db, TeaDataClass tea ){
-        db.execSQL("INSERT INTO teainfoDB VALUES('"+tea.teaName+"', '"+ tea.teaEfficacy+"', '"+ tea.teaExplan+"', "+ tea.mindkey+", "+ tea.teaImg+");");
+        db.execSQL("INSERT INTO teainfoDB VALUES('"+tea.teaName+"', '"+ tea.teaEfficacy+"', '"+ tea.teaExplan+"', "+ tea.mindkey+", "+ tea.teaImg+", '"+tea.teaUri+"' );");
     }
 }

@@ -32,11 +32,12 @@
 
         <ImageView
             android:id="@+id/detail_tea_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="230dp"
+            android:layout_height="165dp"
             android:layout_marginLeft="25dp"
+            android:transitionName="imageTransition"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"/>
 
         <TextView
             android:id="@+id/detail_tea_name"
@@ -44,6 +45,7 @@
             android:layout_height="wrap_content"
             android:text="차이름"
             android:fontFamily="@font/classic"
+            android:transitionName="nameTransition"
             android:textColor="@color/green"
             android:textSize="30sp" />
 
@@ -54,6 +56,7 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/shape_olive"
             android:gravity="center"
+            android:transitionName="efficTransition"
             android:text="#차효능#효능적기"
             android:textColor="@color/white"
             android:textSize="20sp" />
@@ -81,7 +84,7 @@
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
         android:layout_marginLeft="50dp"
-        android:text="상세보기"
+        android:text="사러가기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

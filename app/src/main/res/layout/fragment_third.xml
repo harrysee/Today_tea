@@ -31,9 +31,9 @@
         tools:layout_editor_absoluteX="20dp">
 
         <ImageView
-            android:layout_width="57dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="20dp"
             android:src="@drawable/spoon_good" />
 
@@ -60,9 +60,9 @@
         tools:layout_editor_absoluteX="20dp">
 
         <ImageView
-            android:layout_width="57dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="20dp"
             android:src="@drawable/spoon_sad" />
 
@@ -88,9 +88,9 @@
         tools:layout_editor_absoluteX="20dp">
 
         <ImageView
-            android:layout_width="57dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="20dp"
             android:src="@drawable/spoon_soso" />
 
@@ -115,9 +115,9 @@
         app:layout_constraintTop_toBottomOf="@+id/feel3">
 
         <ImageView
-            android:layout_width="57dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
             android:layout_marginLeft="20dp"
             android:src="@drawable/spoon_bad" />
 

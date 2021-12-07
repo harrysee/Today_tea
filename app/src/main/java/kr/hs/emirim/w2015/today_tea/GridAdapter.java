@@ -1,6 +1,7 @@
 package kr.hs.emirim.w2015.today_tea;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,18 +39,39 @@ public class GridAdapter extends BaseAdapter {
         return position;
     }
 
+    public void addItem(ArrayList<TeaDataClass> ds){
+        teas = ds;
+        this.notifyDataSetChanged(); // 호출후에 하던지 아니면. 그냥 여기서 하자
+    }
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.tea_item,parent,false);
 
-        ImageView tea_img_view = convertView.findViewById(R.id.item_teaImg);
-        TextView tea_name_view = convertView.findViewById(R.id.item_teaName);
-        TextView tea_explan_view = convertView.findViewById(R.id.item_teaExplan);
+        ImageView tea_img_view = convertView.findViewById(R.id.teaImg);
+        TextView tea_name_view = convertView.findViewById(R.id.teaName);
+        TextView tea_explan_view = convertView.findViewById(R.id.teaExplan);
 
         tea_name_view.setText(this.teas.get(position).teaName);
         tea_explan_view.setText(this.teas.get(position).teaEfficacy);
-//        tea_img_view.setImageResource(this.teas.get(position).teaImg);
+        Log.i(teas.get(position).teaImg+"", "onItemClick: 어댑터");
+        switch (teas.get(position).teaImg){
+            case 1:
+                tea_img_view.setImageResource(R.drawable.yellow);
+                break;
+            case 2:
+                tea_img_view.setImageResource(R.drawable.red);
+                break;
+            case 3:
+                tea_img_view.setImageResource(R.drawable.green);
+                break;
+            case 4:
+                tea_img_view.setImageResource(R.drawable.orange);
+                break;
+            case 5:
+                tea_img_view.setImageResource(R.drawable.blue);
+                break;
+        }
         return convertView;
     }
 }

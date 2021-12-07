@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowActivityTransitions" tools:targetApi="lollipop" >true</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -14,12 +15,11 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Today_tea.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
     <style name="Theme.Today_tea.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Today_tea.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/pastel_blue</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>

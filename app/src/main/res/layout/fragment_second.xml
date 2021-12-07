@@ -8,16 +8,16 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="차에 대해서"
-        android:gravity="center"
+        android:text="차에 대해서..."
+        android:gravity="left"
+        android:paddingLeft="30dp"
         android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
         android:textSize="20sp"
         android:textColor="#384532"/>
     <ImageView
-        android:src="@drawable/tea_guide_0"
+        android:src="@drawable/tea_guide"
         android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_height="150dp"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -39,7 +39,6 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="207dp"
-                android:layout_marginBottom="5dp"
                 android:src="@drawable/guide_1" />
             <ImageView
                 android:src="@drawable/guide_2"

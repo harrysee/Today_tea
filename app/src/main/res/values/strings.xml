@@ -12,7 +12,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ask_mind">오늘의 기분은?</string>
-    <string name="mind_good">즐겁고 행복한 기분이야</string>
+    <string name="mind_good">즐겁고 행복한 기분</string>
     <string name="mind_bad">막 화난 기분이 들어</string>
     <string name="mind_sad">오늘따라 우울해</string>
     <string name="mind_soso">심심하고 지루하다</string>
