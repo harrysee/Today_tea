@@ -20,6 +20,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -63,6 +64,7 @@ public class TeaFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         searchEdit = view.findViewById(R.id.search_edit);
         searchBtn = view.findViewById(R.id.search_btn);
+        Button feb_my = view.findViewById(R.id.feb);
 
         teas = new ArrayList<>();
         while(cursor.moveToNext()){
@@ -96,6 +98,13 @@ public class TeaFragment extends Fragment {
         });
 
         searchBtn.setOnClickListener(searchBtnClickListener);
+        feb_my.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ReviewTeaActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -111,6 +120,5 @@ public class TeaFragment extends Fragment {
             gridAdapter.addItem(teas);
         }
     };
-
 
 }

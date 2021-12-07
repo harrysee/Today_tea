@@ -9,6 +9,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Today_tea">
+        <activity android:name=".ReviewTeaActivity"></activity>
         <activity android:name=".RandomTeaActivity" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".SplashActivity">

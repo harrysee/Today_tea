@@ -4,7 +4,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
@@ -13,6 +16,7 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +28,10 @@ public class DetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        SQLiteDatabase DB;
+        SqlRvHelper helper = new SqlRvHelper(DetailsActivity.this);
+        DB = helper.getWritableDatabase();
+
         // 데이터 가져오기
         Intent intent = getIntent();
         String teaname = intent.getStringExtra("name");
@@ -52,6 +60,8 @@ public class DetailsActivity extends AppCompatActivity {
                         Pair.create(findViewById(R.id.detail_tea_name),"nameTransition"),
                         Pair.create(findViewById(R.id.detail_tea_efficacy),"efficTransition")
                 );
+                helper.close();
+                DB.close();
                 finish();
             }
         });
@@ -62,6 +72,29 @@ public class DetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(teauri));   //이동시키기
                 startActivity(intent);
+            }
+        });
+
+        // 한줄후기 받기
+        eatbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText et = new EditText(DetailsActivity.this);
+                AlertDialog.Builder alt_bld = new AlertDialog.Builder(DetailsActivity.this,R.style.MyAlertDialogStyle);
+                alt_bld.setTitle("한줄 후기")
+                        .setMessage("차에 대한 나만의 일지를 작성하세요")
+                        .setIcon(R.drawable.logo)
+                        .setCancelable(false)
+                        .setView(et)
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                String value = et.getText().toString();
+                                helper.insertTEA(DB, new ListDataClass(teaname, value));
+                            }
+                        });
+                AlertDialog alert = alt_bld.create();
+                alert.show();
+
             }
         });
 
