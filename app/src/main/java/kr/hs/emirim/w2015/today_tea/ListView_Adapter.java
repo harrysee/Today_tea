@@ -55,8 +55,8 @@ class ListView_Adapter extends BaseAdapter {
 
         // ListView의 Item을 구성하는 뷰 세팅
         ListDataClass item = items.get(position);
-        title.setText(String.valueOf(position+1));		// 해당위치 +1 설정, 배열순으로 0부터 시작
-        ex.setText(item.getTitle());					// item 객체 내용을 가져와 세팅
+        title.setText(item.getTitle());		// 해당위치 +1 설정, 배열순으로 0부터 시작
+        ex.setText(item.getText());					// item 객체 내용을 가져와 세팅
 
         // 설정한 view를 반환해줘야 함
         return view;

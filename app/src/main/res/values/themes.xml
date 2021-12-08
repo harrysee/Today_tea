@@ -2,9 +2,10 @@
     <!-- Base application theme. -->
     <style name="Theme.Today_tea" parent="Theme.AppCompat.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowActivityTransitions" tools:targetApi="lollipop" >true</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -15,19 +16,14 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.Today_tea.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.Today_tea.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-        <item name="colorPrimary">@color/pastel_blue</item>
-        <item name="android:windowContentOverlay">@null</item>
-    </style>
-
     <!-- Base application theme. -->
-
     <style name="MyAlertDialogStyle" parent="@style/Theme.AppCompat.Dialog.Alert">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">#BDD6CB</item>
         <item name="android:typeface">monospace</item>
-        <item name="android:background">@color/light_gray</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColorPrimary">#DDF1EC</item>
+        <item name="editTextColor">#D5DAE8</item>
+        <item name="android:textColorAlertDialogListItem">@color/green</item>
+        <item name="android:background">#697A6F</item>
     </style>
 </resources>

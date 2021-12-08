@@ -14,6 +14,8 @@
     <color name="light_beige">#FFFFDA</color>
     <color name="olive">#998D40</color>
     <color name="light_pink">#998D40</color>
+    <color name="colorPrimaryDark">#7E90C5</color>
+    <color name="colorAccent">#6B8778</color>
 
     <color name="light_gray">#E7E7E7</color>
     <color name="basic_green">#B3BFAF</color>

@@ -47,22 +47,10 @@ public class ReviewTeaActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.add_list);
         items = new ArrayList<>();
 
+        setItems();
         // 만들어진 item 리스트로 Aapter 생성
         ListView_Adapter mAdapter = new ListView_Adapter(this, items);
         listView.setAdapter(mAdapter);      // ListView에 Adapter 연결
-
-        // ListView Item 클릭이벤트 처리
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                // AdapterView - 리스트뷰에 연결한 Adapter, getItemAtPosition(),
-                // Adapter의 메소드 getItem()과 동일한 메소드
-                ListDataClass item = (ListDataClass) adapterView.getItemAtPosition(position);
-
-                // 클릭한 위치의 Item의 title 문자열 반환
-                String title = item.getTitle();
-            }
-        });
 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

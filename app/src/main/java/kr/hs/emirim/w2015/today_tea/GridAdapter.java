@@ -47,14 +47,13 @@ public class GridAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.tea_item,parent,false);
-
+        
         ImageView tea_img_view = convertView.findViewById(R.id.teaImg);
         TextView tea_name_view = convertView.findViewById(R.id.teaName);
         TextView tea_explan_view = convertView.findViewById(R.id.teaExplan);
 
         tea_name_view.setText(this.teas.get(position).teaName);
         tea_explan_view.setText(this.teas.get(position).teaEfficacy);
-        Log.i(teas.get(position).teaImg+"", "onItemClick: 어댑터");
         switch (teas.get(position).teaImg){
             case 1:
                 tea_img_view.setImageResource(R.drawable.yellow);

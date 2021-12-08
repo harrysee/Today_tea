@@ -76,10 +76,9 @@ public class TeaFragment extends Fragment {
 
         gridView.setAdapter(gridAdapter);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {     // 각 아이템 클릭시
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(),teas.get(position).teaName+"을 클릭했습니다",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(),teas.get(position).teaName+"을 클릭했습니다",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra("name",teas.get(position).teaName);
                 intent.putExtra("efficacy",teas.get(position).teaEfficacy);
@@ -87,11 +86,6 @@ public class TeaFragment extends Fragment {
                 intent.putExtra("url",teas.get(position).teaUri);
                 intent.putExtra("imgSrc",teas.get(position).teaImg);
                 Log.i(String.valueOf(teas.get(position).teaImg), "onItemClick: ");
-                ActivityOptions.makeSceneTransitionAnimation(getActivity(),
-                        Pair.create(view.findViewById(R.id.teaImg),"imageTransition"),
-                        Pair.create(view.findViewById(R.id.teaName),"nameTransition"),
-                        Pair.create(view.findViewById(R.id.teaExplan),"efficTransition")
-                );
                 // 설명, 링크 추가
                 startActivity(intent);
             }
@@ -105,20 +99,28 @@ public class TeaFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
     }
 
     View.OnClickListener searchBtnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             String word = searchEdit.getText().toString();
-            searchCursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB WHERE teaname LIKE '%"+ word +"%';",null);
             teas = new ArrayList<>();
-            while(searchCursor.moveToNext()){
-                teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4),cursor.getString(5)));
+            if(word.equals("")){
+                cursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB;",null);
+                while(cursor.moveToNext()){
+                    teas.add(new TeaDataClass(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getInt(3),cursor.getInt(4),cursor.getString(5)));
+                }
+            }else{
+                searchCursor = rsqlDB.rawQuery("SELECT * FROM teainfoDB WHERE teaname LIKE '%"+ word +"%';",null);
+                while(searchCursor.moveToNext()){
+                    Log.i("TAG", "onClick: 검색 됨");
+                    teas.add(new TeaDataClass(searchCursor.getString(0),searchCursor.getString(1),searchCursor.getString(2),searchCursor.getInt(3),searchCursor.getInt(4),searchCursor.getString(5)));
+                }
             }
             gridAdapter.addItem(teas);
         }
     };
 
 }
+

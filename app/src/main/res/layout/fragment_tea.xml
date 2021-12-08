@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="30dp"
+        android:inputType="textNoSuggestions|textVisiblePassword"
         android:hint="찾으시는 차를 검색해주세요"
         android:paddingLeft="15dp"
         android:paddingBottom="15dp"
@@ -46,10 +47,10 @@
         android:verticalSpacing="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_edit"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         tools:listitem="@layout/tea_item" />
 
     <Button
@@ -61,7 +62,7 @@
         android:paddingRight="20dp"
         android:text="MY"
         android:layout_marginRight="20dp"
-        android:backgroundTint="#A395A192"
+        android:backgroundTint="#B298A0AE"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="30dp"
         app:layout_constraintEnd_toEndOf="parent" />

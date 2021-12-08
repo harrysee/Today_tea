@@ -55,11 +55,6 @@ public class DetailsActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(DetailsActivity.this,
-                        Pair.create(findViewById(R.id.detail_tea_img),"imageTransition"),
-                        Pair.create(findViewById(R.id.detail_tea_name),"nameTransition"),
-                        Pair.create(findViewById(R.id.detail_tea_efficacy),"efficTransition")
-                );
                 helper.close();
                 DB.close();
                 finish();
@@ -84,7 +79,7 @@ public class DetailsActivity extends AppCompatActivity {
                 alt_bld.setTitle("한줄 후기")
                         .setMessage("차에 대한 나만의 일지를 작성하세요")
                         .setIcon(R.drawable.logo)
-                        .setCancelable(false)
+                        .setCancelable(true)
                         .setView(et)
                         .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {

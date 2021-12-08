@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
             datasave(this);
         }
-
     }
     private static void datasave(Activity activity){
         SQLiteDatabase DB;
@@ -67,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
         helper.insertTEA(DB, new TeaDataClass("국화","#스트레스_완화#혈압조절","국화는 스트레스 완화와 안정을 돕고, 혈압을 낮출 수 있으며, 숙면을 도울 수 있습니다.",1,3,"https://smartstore.naver.com/handsherb/products/414544109"));
         helper.insertTEA(DB, new TeaDataClass("맨드라미","#염증완화","맨드라미는 눈 충혈, 심장 활동, 관절 염증 통증 완화에 좋으며, 특히 여성질환인 월경통과 자궁염, 자궁출혈, 냉증 등에 도움이 된다.",2,3,"https://smartstore.naver.com/leelora/products/742139644"));
         helper.insertTEA(DB, new TeaDataClass("매화","#혈액순환","매화는 혈액순환에 도움을 줘 체온유지에 좋으며, 잘못된 식습관과 음주 등으로 위 관련 질환을 걱정하는 사람들도 매화꽃차를 꾸준히 마신다면 위를 보호하는 효능으로 위 관련 질환 예방에 효과가 있을 수 있다.",1,4,"https://smartstore.naver.com/leelora/products/742135756"));
+        helper.insertTEA(DB, new TeaDataClass("mindle","#혈액순환","매화는 혈액순환에 도움을 줘 체온유지에 좋으며, 잘못된 식습관과 음주 등으로 위 관련 질환을 걱정하는 사람들도 매화꽃차를 꾸준히 마신다면 위를 보호하는 효능으로 위 관련 질환 예방에 효과가 있을 수 있다.",1,4,"https://smartstore.naver.com/leelora/products/742135756"));
+        helper.insertTEA(DB, new TeaDataClass("rose","#혈액순환","매화는 혈액순환에 도움을 줘 체온유지에 좋으며, 잘못된 식습관과 음주 등으로 위 관련 질환을 걱정하는 사람들도 매화꽃차를 꾸준히 마신다면 위를 보호하는 효능으로 위 관련 질환 예방에 효과가 있을 수 있다.",1,4,"https://smartstore.naver.com/leelora/products/742135756"));
+        helper.insertTEA(DB, new TeaDataClass("dongonal","#혈액순환","매화는 혈액순환에 도움을 줘 체온유지에 좋으며, 잘못된 식습관과 음주 등으로 위 관련 질환을 걱정하는 사람들도 매화꽃차를 꾸준히 마신다면 위를 보호하는 효능으로 위 관련 질환 예방에 효과가 있을 수 있다.",1,4,"https://smartstore.naver.com/leelora/products/742135756"));
         DB.close();
         helper.close();
     }
